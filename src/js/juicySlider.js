@@ -102,7 +102,7 @@
 		 */
 		this.init = function() {
 
-			this.options.current = this.options.carousel ? 0 + this.options.offset : 0;
+			this.options.current = this.options.carousel ? this.options.current + this.options.offset : this.options.current;
 
 			// first let the errorHandler check if everything is available as needed
 			this._errorHandler(this.options);
