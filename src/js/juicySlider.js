@@ -36,7 +36,6 @@
 			initListeners,
 			slide,
 			conditions = false,
-			cloneAmount = 0,
 			current = 0,
 			self = this,
 			autoScroll;
@@ -263,20 +262,14 @@
 				options.slider[0].appendChild(clone);
 			}
 
-
 			for (var j = cloneLeft; j > 0; j--) {
-				var temp1 = slides.length - cloneRight - cloneAmount;
-				if (options.visEl >= 3) {
-					temp1 = temp1 + 1;
-				}
-
-
-				clone = slides[temp1 - cloneLeft].cloneNode(true);
+				// Cloning slides from the 'right' of the original slides. As
+				// clones are added to the left, the index of the to-be-cloned
+				// slide keeps persistent.
+				clone = slides[options.trueSlideLength-1].cloneNode(true);
 				clone.classList.add('clone-left');
 				clone.classList.add('clone');
 				options.slider[0].insertBefore(clone, options.slider[0].firstChild);
-
-				cloneAmount++;
 			}
 		};
 
