@@ -245,9 +245,8 @@
 
 			// If no active class is set set it manually / usualy on start;
 			if (options.slideWrapper[0].getElementsByClassName('active').length === 0) {
-				slides[0].classList.add('active');
+				slides[options.current].classList.add('active');
 				if (options.direction == 'horizontal') {
-					this.options.current = 1;
 					slideAmount = -(this.options.current * 100) + '%';
 				}
 			}
