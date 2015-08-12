@@ -279,7 +279,7 @@
 
 			// If no active class is set set it manually / usualy on start;
 			if (options.slideWrapper[0].getElementsByClassName('active').length === 0) {
-				slides[this.options.current].classList.add('active');
+				slides[options.current].classList.add('active');
 			}
 
 			// if replay is false scrolling left is set to disabled by default
@@ -405,7 +405,7 @@
 					}
 
 					if (options.offset > 0 && options.visEl > 1 && !options.carousel) {
-						templeft = ((this.options.current + options.offset) * 100 / slides.length) + '%';
+						templeft = ((options.current + options.offset) * 100 / slides.length) + '%';
 					}
 
 					// jSlider
