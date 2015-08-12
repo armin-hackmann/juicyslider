@@ -311,7 +311,7 @@
 
 				// jSlide
 				slideStyle = {
-					width: 100 / slides.length + '%'
+					width: 100 / slideLength + '%'
 				};
 
 				if (options.includeArrows) {
@@ -351,7 +351,7 @@
 						// jSlider
 						sliderStyle = {
 							transition: 'all ' + options.slideSpeed + 'ms ' + options.easing,
-							width: itemwidth * slides.length + 1 + 'px',
+							width: itemwidth * slideLength + 1 + 'px',
 							height: '100%',
 							transform: 'translate3d(' + templeft + ',0,0)',
 							webkitTransform: 'translate3d(' + templeft + ',0,0)'
@@ -381,7 +381,7 @@
 						// jSlider
 						sliderStyle = {
 							transition: 'all ' + options.slideSpeed + 'ms ' + options.easing,
-							width: (slides.length * 100) / options.visEl + '%',
+							width: (slideLength * 100) / options.visEl + '%',
 							height: '100%',
 							transform: 'translate3d(' + templeft + ',0,0)',
 							webkitTransform: 'translate3d(' + templeft + ',0,0)'
@@ -399,19 +399,19 @@
 					};
 
 					if (cloneLeft !== undefined) {
-						templeft = -((cloneLeft - options.offset) * 100 / slides.length) + '%';
+						templeft = -((cloneLeft - options.offset) * 100 / slideLength) + '%';
 					} else {
 						templeft = '0%';
 					}
 
 					if (options.offset > 0 && options.visEl > 1 && !options.carousel) {
-						templeft = ((options.current + options.offset) * 100 / slides.length) + '%';
+						templeft = ((options.current + options.offset) * 100 / slideLength) + '%';
 					}
 
 					// jSlider
 					sliderStyle = {
 						transition: 'all ' + options.slideSpeed + 'ms ' + options.easing,
-						width: (slides.length * 100) / options.visEl + '%',
+						width: (slideLength * 100) / options.visEl + '%',
 						height: '100%',
 						transform: 'translate3d(' + templeft + ',0,0)',
 						webkitTransform: 'translate3d(' + templeft + ',0,0)'
@@ -423,13 +423,13 @@
 				sliderStyle = {
 					transition: 'all ' + options.slideSpeed + 'ms ' + options.easing,
 					width: '100%',
-					height: slides.length * 100 + '%',
+					height: slideLength * 100 + '%',
 					top: '0%'
 				};
 				// jSlide
 				slideStyle = {
 					width: '100%',
-					height: 100 / slides.length + '%'
+					height: 100 / slideLength + '%'
 				};
 			}
 
@@ -440,7 +440,7 @@
 			extendOptions(options.slideWrapper[0].style, wrapperStyle, 'style');
 			extendOptions(options.slider[0].style, sliderStyle, 'style');
 
-			for (var i = 0; i < slides.length; i++) {
+			for (var i = 0; i < slideLength; i++) {
 				extendOptions(slides[i].style, slideStyle, 'style');
 			}
 
@@ -586,22 +586,22 @@
 							} else {
 								options.ctrlP[0].classList.add('disabled');
 							}
-							if (options.current <= slides.length) {
+							if (options.current <= slideLength) {
 								options.ctrlN[0].classList.remove('disabled');
 							}
 						}
 						options.current--;
 					} else {
 						if (options.replay) {
-							options.current = slides.length - 1;
+							options.current = slideLength - 1;
 						} else {
 							options.ctrlN[0].classList.remove('disabled');
 							options.ctrlP[0].classList.add('disabled');
 						}
 					}
 					if (options.replay) {
-						if (options.current >= slides.length - options.visEl + 1) {
-							options.current = slides.length - options.visEl;
+						if (options.current >= slideLength - options.visEl + 1) {
+							options.current = slideLength - options.visEl;
 						}
 					}
 
@@ -617,10 +617,10 @@
 								if (options.itemsize !== 'auto') {
 									slideAmount = -(options.current * options.itemsize) + 'px';
 								} else {
-									slideAmount = -(options.current * 100 / slides.length) + '%';
+									slideAmount = -(options.current * 100 / slideLength) + '%';
 								}
 
-								for (var i = 0; i < slides.length; i++) {
+								for (var i = 0; i < slideLength; i++) {
 									slides[i].classList.remove('active');
 								}
 
@@ -648,17 +648,17 @@
 					}
 
 				} else {
-					if (options.current < slides.length - 1) {
+					if (options.current < slideLength - 1) {
 						options.current++;
 						if (!options.replay) {
 							options.ctrlP[0].classList.remove('disabled');
 
 							if (!options.scrollToEnd) {
-								if (options.current == slides.length - options.visEl) {
+								if (options.current == slideLength - options.visEl) {
 									options.ctrlN[0].classList.add('disabled');
 								}
 							} else {
-								if (options.current == slides.length - options.offset) {
+								if (options.current == slideLength - options.offset) {
 									options.ctrlN[0].classList.add('disabled');
 								}
 							}
@@ -671,7 +671,7 @@
 					}
 
 					if (options.replay) {
-						if (options.current >= slides.length - options.visEl + 1) {
+						if (options.current >= slideLength - options.visEl + 1) {
 							options.current = 0;
 						}
 					}
@@ -693,10 +693,10 @@
 								if (options.itemsize !== 'auto') {
 									slideAmount = -(options.current * options.itemsize) + 'px';
 								} else {
-									slideAmount = -(options.current * 100 / slides.length) + '%';
+									slideAmount = -(options.current * 100 / slideLength) + '%';
 								}
 
-								for (var i = 0; i < slides.length; i++) {
+								for (var i = 0; i < slideLength; i++) {
 									slides[i].classList.remove('active');
 								}
 
@@ -730,13 +730,13 @@
 			if (options.itemsize !== 'auto') {
 				slideAmount = -(options.current * options.itemsize) + 'px';
 			} else {
-				slideAmount = -(options.current * 100 / slides.length) + '%';
+				slideAmount = -(options.current * 100 / slideLength) + '%';
 			}
 			if (options.offset > 0 && options.visEl > 1 && !options.carousel) {
-				slideAmount = -((options.current - options.offset) * 100 / slides.length) + '%';
+				slideAmount = -((options.current - options.offset) * 100 / slideLength) + '%';
 			}
 
-			for (var i = 0; i < slides.length; i++) {
+			for (var i = 0; i < slideLength; i++) {
 				slides[i].classList.remove('active');
 			}
 			if (slides && slides[options.current]) {
