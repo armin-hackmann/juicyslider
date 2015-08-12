@@ -246,12 +246,7 @@
 			// If no active class is set set it manually / usualy on start;
 			if (options.slideWrapper[0].getElementsByClassName('active').length === 0) {
 				slides[options.current].classList.add('active');
-				if (options.direction == 'horizontal') {
-					slideAmount = -(this.options.current * 100) + '%';
-				}
 			}
-
-
 
 			// preparing clones for the right side
 			for (var i = 0; i < cloneRight; i++) {
