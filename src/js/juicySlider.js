@@ -147,7 +147,7 @@
 			err = {
 				noEl: 'jSslider says: Container could not be found in your dom',
 				noSlider: 'jSslider says: Slider could not be found in your dom',
-				noCtrl: 'jSslider says: Arrows could not be found in your dom, you need something to controller the slider or automate it',
+				noCtrl: 'jSslider says: Arrows could not be found in your dom, you need something to control the slider or automate it',
 				noSlideWrapper: 'jSslider says: The Slidewrapper is missing , .slidewrapper>ul>li ..'
 			};
 
