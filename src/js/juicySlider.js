@@ -363,6 +363,7 @@
 						arrowwidth = options.ctrlN[0].clientWidth;
 						slideWrapperWidth = options.el.clientWidth;
 						temp = (100 / slideWrapperWidth) * arrowwidth * 2;
+						itemwidth = (100 / slideLength);
 
 						wrapperStyle = {
 							width: 100 - temp + '%',
@@ -373,9 +374,9 @@
 						};
 
 						if (cloneLeft !== undefined) {
-							templeft = -((cloneLeft - options.offset) * 100 / options.visEl) + '%';
+							templeft = -((cloneLeft - options.offset) * itemwidth) - (options.current * itemwidth) + '%';
 						} else {
-							templeft = '0%';
+							templeft = - (options.current * itemwidth) + '%';
 						}
 
 						// jSlider
