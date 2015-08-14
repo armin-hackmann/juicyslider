@@ -360,10 +360,10 @@
 						options.ctrlN[0].style.width = arrowStyle.width;
 						options.ctrlP[0].style.width = arrowStyle.width;
 					} else {
+						itemwidth = (100 / slideLength);
 						arrowwidth = options.ctrlN[0].clientWidth;
 						slideWrapperWidth = options.el.clientWidth;
 						temp = (100 / slideWrapperWidth) * arrowwidth * 2;
-						itemwidth = (100 / slideLength);
 
 						wrapperStyle = {
 							width: 100 - temp + '%',
